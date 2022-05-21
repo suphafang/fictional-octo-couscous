@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+        * {
+            font-family: 'Rajdhani', 'Kanit', cursive;
+        }
+        body {
+            margin: 0;
+        }
+        .modal-screen {
+            background-color: rgba(59, 130, 246, 0.5);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-card {
+            width: 100%;
+            margin: 1.5rem;
+            max-width: 350px;
+        }
+        .modal-header {
+            height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: #4e46e5; */
+            background: linear-gradient(to bottom right, #4e46e5, #191391);
+            color: #FFFFFF;
+            border-radius: .75rem .75rem 0 0;
+            position: relative;
+        }
+        .modal-header h1 {
+            margin: 0;
+            position: relative;
+            top: -.75rem;
+            text-transform: uppercase;
+        }
+        .modal-body {
+            padding: 0 1rem 1rem 1rem;
+            border-radius:  0 0 .75rem .75rem;
+            background-color: #FFFFFF;
+        }
+        .modal-name {
+            margin: 0;
+            text-align: center;
+            font-size: 1.25rem;
+            position: relative;
+            top: -1.25rem;
+            color: hsl(0, 0%, 20%);
+        }
+        .modal-bio {
+            margin: 0;
+            text-align: center;
+            position: relative;
+            top: -1rem;
+            color: hsl(0, 0%, 40%);
+            font-size: .8rem;
+        }
+        .modal-hashtags {
+            text-align: center;
+        }
+        .modal-hashtags-object {
+            display: inline-block;
+            border: 1px solid #4e46e5;
+            color: #4e46e5;
+            font-size: .8rem;
+            padding: .1rem .5rem;
+            cursor: pointer;
+            border-radius: .15rem;
+            transition: 400ms;
+            margin-bottom: .25rem;
+        }
+        .modal-hashtags-object:hover {
+            background-color: #4e46e5;
+            color: #FFFFFF;
+        }
+        .modal-contact {
+            text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal-contact-object {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 1rem;
+            height: 1rem;
+            padding: .5rem;
+            border-radius: 50%;
+            margin: .25rem;
+            text-decoration: none;
+            transition: 200ms;
+        }
+        .modal-contact-object:hover {
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+        }
+        .modal-profile {
+            width: 75px;
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 4px solid #FFFFFF;
+            position: relative;
+            top: -2.5rem;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+        }
+        .facebook {
+            background-color: #4267B2;
+            color: #FFFFFF;
+        }
+        .line {
+            background-color: #00c300;
+            color: #FFFFFF;
+        }
+        .instagram {
+            background: linear-gradient(#8a3ab9, #e95950);
+            color: #FFFFFF;
+        }
+        .modal-message {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .modal-message-input {
+            border-radius: .5rem;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            padding: 1rem 1rem;
+            outline: none;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+            transition: 400ms;
+        }
+        .modal-message-input:focus {
+            border-color: #4e46e5;
+        }
+        .modal-message-button {
+            outline: none;
+            border-radius: .5rem;
+            border: 1px solid #FFFFFF;
+            background-color: #4e46e5;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: .75rem;
+            transition: 400ms;
+            font-size: 1rem;
+        }
+        .modal-message-button i {
+            margin-right: .5rem;
+        }
+        .modal-message-button:hover {
+            background-color: #3b34c7;
+        }
+        .modal-close {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -.5rem;
+            right: -.5rem;
+            border-radius: 50%;
+            height: 2rem;
+            width: 2rem;
+            border: none;
+            background-color: #FFFFFF;
+            color: #c73434;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+            transition: 400ms;
+        }
+        .modal-close:hover {
+            background-color: #c73434;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-screen" id="modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <button type="button" class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+                <h1 id="modal-profile-year">Junior</h1>
+            </div>
+            <div class="modal-body">
+                <img class="modal-profile" id="modal-profile-picture" src="https://localhost/media/profiles/1921484628030190.jpg" alt="Profile">
+                <h2 class="modal-name" id="modal-profile-fullname">Apichet Komwatcharapong</h2>
+                <p class="modal-bio" id="modal-profile-bio">Suphachai Shaw is a 19-year-old medical student who enjoys watching television, going to the movies and running. He is gentle and considerate, but can also be very disloyal and a bit dull.</p>
+                <div class="modal-hashtags" id="modal-profile-hashtags">
+                    <span class="modal-hashtags-object">Netflix</span>
+                    <span class="modal-hashtags-object">Spotify</span>
+                    <span class="modal-hashtags-object">Google</span>
+                    <span class="modal-hashtags-object">YouTube</span>
+                    <span class="modal-hashtags-object">Facebook</span>
+                    <span class="modal-hashtags-object">Developer</span>
+                    <span class="modal-hashtags-object">Thailand</span>
+                </div>
+                <div class="modal-contact">
+                    <a href="#" target="_blank" id="modal-profile-facebook" class="modal-contact-object facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" id="modal-profile-line" class="modal-contact-object line"><i class="fab fa-line"></i></a>
+                    <a href="#" target="_blank" id="modal-profile-instagram" class="modal-contact-object instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <?php 
+                    if($_SESSION['authentication']['year'] === 'freshman') {
+                ?>
+                <div class="modal-message">
+                    <textarea name="" rows="5" class="modal-message-input" placeholder="Type something to Apichet."></textarea>
+                    <button type="submit" class="modal-message-button"><i class="fas fa-paper-plane"></i> Send message</button>
+                </div>
+                <?php
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Prompt:wght@100;200;300;400;500&display=swap');
+* {
+    margin: 0;
+    font-family: 'Poppins', 'Prompt', cursive;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(80, 80, 80);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(50, 50, 50);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(40, 40, 40);
+}
+body {
+    min-height: 100vh;
+    background-color: #000000;
+    background-image: url('/space-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem 1rem 2rem 1rem;
+}
+
+.brand {
+    position: relative;
+}
+.brand > h1 {
+    font-size: 1rem;
+    display: block;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.brand > span {
+    position: relative;
+    top: -1rem;
+    display: block;
+    font-size: 3rem;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: text 500ms linear infinite;
+}
+.brand > p {
+    text-align: center;
+    position: relative;
+    top: -1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.form-register {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
+    color: #FFFFFF;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .125);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem 1rem;
+}
+.bg > img {
+    position: absolute;
+    max-width: 60vw;
+    top: 6rem;
+    left: -6rem;
+    animation: mars 120s linear infinite;
+    z-index: 10;
+}
+.form-register > h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.form-group > label {
+    margin-bottom: .5rem;
+}
+.form-group > input, .form-group > select, .form-group > textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: .75rem;
+    border: none!important;
+    border-radius: .4rem;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #FFFFFF;
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, .125);
+    -webkit-appearance: none;
+}
+.form-group > input::placeholder, .form-group > textarea::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+.tagify {
+    -webkit-appearance: none;
+    -webkit-backdrop-filter: blur(10px);
+    --placeholder-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, .125);
+    border-radius: .4rem;
+}
+.form-group > select option {
+    color: #000000;
+}
+.form-navigator {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.form-navigator > button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: .5rem 1rem;
+    color: #FFFFFF;
+    border-radius: .25rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .125);
+    transition: 500ms;
+    opacity: .75;
+    display: flex;
+    align-items: center;
+}
+.form-navigator > button:hover {
+    opacity: 1;
+}
+.form-navigator > button > span {
+    font-size: 1rem;
+}
+.form-navigator > button.form-navigator-next {
+    margin-left: auto;
+}
+.form-navigator > button.form-navigator-next > span {
+    margin-left: .5rem;
+}
+.form-navigator > button.form-navigator-prev > span {
+    margin-right: .5rem;
+}
+@keyframes mars {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}

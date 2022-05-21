@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Prompt:wght@100;200;300;400;500&display=swap');
+* {
+    margin: 0;
+    font-family: 'Poppins', 'Prompt', cursive;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(80, 80, 80);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(50, 50, 50);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(40, 40, 40);
+}
+body {
+    min-height: 100vh;
+    background-color: #000000;
+    background-image: url('/space-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form-login-header {
+    position: relative;
+}
+.form-login-header > h1 {
+    font-size: 3rem;
+    display: block;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.form-login-header > span {
+    position: relative;
+    top: -1.5rem;
+    display: block;
+    font-size: 8rem;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: text 500ms linear infinite;
+}
+.form-login-header > p {
+    text-align: center;
+    position: relative;
+    top: -3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.form-login-button {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
+    color: #FFFFFF;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .125);
+    transition: 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-login-button > span {
+    margin-right: 1rem;
+}
+.form-login-button:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.bg > img {
+    position: absolute;
+    max-width: 60vw;
+    top: 6rem;
+    left: -6rem;
+    animation: mars 120s linear infinite;
+    z-index: 10;
+}
+
+@keyframes mars {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes text {
+    0% {
+        transform: rotate(0deg);
+        left: 0px;
+    } 
+    25% {
+        transform: rotate(2deg);
+        right: 5px;
+    }
+    75% {
+        transform: rotate(-2deg);
+        left: 5px;
+    }
+    100% {
+        transform: rotate(0deg);
+        left: 0px;
+    }
+}
